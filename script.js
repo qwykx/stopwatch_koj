@@ -12,7 +12,6 @@ var diff_count = 0;
 
 
 var timer = false;
-var lapCounter = 1;
 const audio = new Audio();
 audio.src = "audio/sound_trim.mp3";
 
@@ -58,7 +57,6 @@ function reset() {
     $id("count").innerHTML = "00";
 
     $id("record-table-body").innerHTML = "";
-    lapCounter = 1;
 
 }
 
