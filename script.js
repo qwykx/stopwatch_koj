@@ -1,14 +1,11 @@
-var hr = 0;
 var min = 0;
 var sec = 0;
 var count = 0;
 
-var prev_hr = 0;
 var prev_min = 0;
 var prev_sec = 0;
 var prev_count = 0;
 
-var diff_hr = 0;
 var diff_min = 0;
 var diff_sec = 0;
 var diff_count = 0;
@@ -51,12 +48,11 @@ function reset() {
     timer = false;
     $id("start").innerHTML = '<i class="far fa-play-circle"></i> Start';
 
-    hr = 0;
+
     min = 0;
     sec = 0;
     count = 0;
 
-    $id("hr").innerHTML = "00";
     $id("min").innerHTML = "00";
     $id("sec").innerHTML = "00";
     $id("count").innerHTML = "00";
@@ -81,20 +77,11 @@ function stopwatch() {
         min = min + 1;
         sec = 0;
     }
-    if (min == 59) {
-        hr = hr + 1;
-        min = 0;
-        sec = 0;
-    }
 
-    var hrString = hr;
     var minString = min;
     var secString = sec;
     var countString = count;
 
-    if (hr < 10) {
-        hrString = "0" + hrString;
-    }
     if (min < 10) {
         minString = "0" + minString;
     }
@@ -105,7 +92,6 @@ function stopwatch() {
         countString = "0" + countString;
     }
 
-    $id("hr").innerHTML = hrString;
     $id("min").innerHTML = minString;
     $id("sec").innerHTML = secString;
     $id("count").innerHTML = countString;
@@ -115,11 +101,9 @@ function stopwatch() {
 
 // to get difference of time between last lap and now
 function getdiff(){
-  diff_hr = hr - prev_hr;
   diff_min = min - prev_min;
   if (diff_min < 0){
     diff_min += 60;
-    diff_hr -= 1;
   }
   diff_sec = sec- prev_sec;
   if (diff_sec < 0){
@@ -135,7 +119,6 @@ function getdiff(){
   prev_count = count;
   prev_sec = sec;
   prev_min = min;
-  prev_hr = hr;
 }
 
 
@@ -148,8 +131,7 @@ function lap() {
         // calling getting difference function
         getdiff();
 
-        var lap_time = $id("hr").innerHTML + ":" 
-        + $id("min").innerHTML + ":" 
+        var lap_time = $id("min").innerHTML + ":" 
         + $id("sec").innerHTML + ":" 
         + $id("count").innerHTML;
         audio.play();
@@ -164,14 +146,10 @@ function lap() {
 
 
 
-        var hrString = diff_hr;
         var minString = diff_min;
         var secString = diff_sec;
         var countString = diff_count;
     
-        if ( diff_hr < 10) {
-            hrString = "0" + hrString;
-        }
         if (diff_min < 10) {
             minString = "0" + minString;
         }
@@ -181,8 +159,7 @@ function lap() {
         if (diff_count < 10) {
             countString = "0" + countString;
         }
-        diff_cell.innerHTML = hrString+ ":" 
-        + minString+ ":" 
+        diff_cell.innerHTML = minString+ ":" 
         + secString + ":" 
         + countString;
         

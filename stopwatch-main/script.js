@@ -1,4 +1,3 @@
-let hr = 0;
 let min = 0;
 let sec = 0;
 let count = 0;
@@ -20,9 +19,8 @@ function stop() {
 
 function reset() {
     timer = false;
-    hr = min = sec = count = 0;
+    min = sec = count = 0;
 
-    $id("hr").innerHTML = "00";
     $id("min").innerHTML = "00";
     $id("sec").innerHTML = "00";
     $id("count").innerHTML = "00";
@@ -42,13 +40,7 @@ function stopwatch() {
         min += 1;
         sec = 0;
     }
-    if (min === 59) {
-        hr += 1;
-        min = 0;
-        sec = 0;
-    }
 
-    updateDisplay(hr, "hr");
     updateDisplay(min, "min");
     updateDisplay(sec, "sec");
     updateDisplay(count, "count");
@@ -62,9 +54,9 @@ function updateDisplay(value, elementId) {
 }
 
 function lap() {
-    console.log(hr, min, sec, count)
+    console.log(min, sec, count)
     const laps = $id('laps');
-    laps.innerHTML += "<li>" + hr + ":" + min + ":" + sec + ":" + count + "</li>";
+    laps.innerHTML += "<li>" + min + ":" + sec + ":" + count + "</li>";
 }
 
 function clearLap() {
