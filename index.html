@@ -58,26 +58,7 @@
         <button class="buttons" id="reset" onclick="reset()">
           <i class="fas fa-undo"></i> Reset
         </button>
-        <button class="buttons" id="lap" onclick="lap()">
-          <i class="fas fa-stopwatch"></i> Lap
-        </button>
-        <button class="buttons" id="clearlap" onclick="clearLap()">
-          <i class="fas fa-trash"></i> Clear Lap
-        </button>
       </div>
-      <div>
-        <div id="record-container">
-          <table id="record-table">
-            <tr>
-              <th>Lap Number</th>
-              <th>Time</th>
-              <th>Diff</th>
-            </tr>
-            <tbody id="record-table-body"></tbody>
-          </table>
-        </div>
-      </div>
-      <hr />
     </div>
   </div>
 
@@ -91,17 +72,6 @@
     document.addEventListener("keyup", (event) => {
       if (event.code === "Backspace") {
         reset();
-      }
-    });
-    document.addEventListener("keyup", (event) => {
-      if (event.code === "Enter") {
-        lap();
-      }
-    });
-
-    document.addEventListener("keyup", (event) => {
-      if (event.code === "Numpad0") {
-        clearLap();
       }
     });
   </script>
