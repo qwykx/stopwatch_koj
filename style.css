@@ -3,9 +3,9 @@
 body {
   background: #7fe9d4;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #191654, #43c6ac);
+  background: -webkit-linear-gradient(to right, #0090df, #ffed00);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #191654, #43c6ac);
+  background: linear-gradient(to right, #0090df, #ffed00);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: block;
   height: 100vh;
