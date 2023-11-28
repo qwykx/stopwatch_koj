@@ -41,8 +41,6 @@ function start() {
 }
 */
 function reset() {
-    //hiding record container div
-    $id("record-container").style.display = "none";
     audio.play();
     timer = false;
     $id("start").innerHTML = '<i class="far fa-play-circle"></i> Start';
@@ -55,9 +53,6 @@ function reset() {
     $id("min").innerHTML = "00";
     $id("sec").innerHTML = "00";
     $id("count").innerHTML = "00";
-
-    $id("record-table-body").innerHTML = "";
-
 }
 
 let timeoutId;
