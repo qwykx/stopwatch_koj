@@ -34,6 +34,7 @@ function start() {
       }
 
     $("start").blur();
+    $("reset").blur();
 }
 
 /*function stop() {
@@ -54,7 +55,9 @@ function reset() {
     $id("min").innerHTML = "00";
     $id("sec").innerHTML = "00";
     $id("count").innerHTML = "00";
-    $id("reset").blur();
+
+    $("start").blur();
+    $("reset").blur();
 }
 
 let timeoutId;
