@@ -32,7 +32,8 @@ function start() {
           timer=false;
           $id("start").innerHTML = '<i class="far fa-play-circle"></i> Start';
       }
-    
+
+    $("start").blur();
 }
 
 /*function stop() {
@@ -53,6 +54,7 @@ function reset() {
     $id("min").innerHTML = "00";
     $id("sec").innerHTML = "00";
     $id("count").innerHTML = "00";
+    $id("reset").blur();
 }
 
 let timeoutId;
